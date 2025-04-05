@@ -1,6 +1,6 @@
 {
   "name": "music-player",
-  "homepage": "https://leticiacmgomes.github.io/music-player/"
+  "homepage": "https://leticiacmgomes.github.io/music-player/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
