@@ -29,7 +29,8 @@
 
 @media screen and (min-width: 1300px) {
   .musicPlayerCard {
-    width: 25vw;
+    width: 23vw;
+    height: 60vh;
   }
 }
 
