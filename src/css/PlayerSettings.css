@@ -1,0 +1,128 @@
+.playerSettings {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 1.5rem;
+}
+
+.playerSettings .progressBarContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerSettings .progressBarContainer .timerContainer {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 0.625rem;
+}
+
+.playerSettings .progressBar {
+  -webkit-appearance: none;
+  height: 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.playerSettings .progressBar::-webkit-slider-runnable-track {
+  height: 0.3rem;
+  border-radius: 0.5rem;
+  filter: drop-shadow(0px 8px 16px rgba(201, 59, 118, 0.25));
+}
+
+.playerSettings .progressBar::-webkit-slider-thumb {
+  appearance: none;
+  background: transparent;
+  width: 0.3rem;
+  height: 0.3rem;
+}
+
+.playerSettings .playerControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.playerSettings .playerControls .stopAndPlayFillReverse {
+  width: 3rem;
+  height: 3rem;
+  background-image: url('../assets/images/Stop_and_play_fill_reverse.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(180deg);
+}
+
+.playerControls .playFillContainer {
+  background: #C93B76;
+  filter: drop-shadow(0px 8px 16px rgba(201, 59, 118, 0.25));
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-image: url('../assets/images/Play_fill.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.playerSettings .playerControls .stopAndPlayFill {
+  width: 3rem;
+  height: 3rem;
+  background-image: url('../assets/images/Stop_and_play_fill.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 1300px) {
+    .playerSettings .progressBarContainer .timerContainer {
+      font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 2550px) {
+  .playerSettings {
+    gap: 3rem;
+  }
+  
+  .playerSettings .progressBarContainer .timerContainer {
+    font-size: 1.5rem;
+  }
+  
+  .playerSettings .playerControls .stopAndPlayFillReverse {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  
+  .playerSettings .playerControls .playFillContainer {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  
+    .playerSettings .playerControls .stopAndPlayFill {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+    .playerSettings .progressBarContainer .timerContainer {
+      font-size: 1.8rem;
+    }
+    
+    .playerSettings .playerControls .playFillContainer {
+      width: 5rem;
+      height: 5rem;
+    }
+    
+    .playerSettings .playerControls .stopAndPlayFillReverse {
+      width: 5rem;
+      height: 5rem;
+    }
+    
+    .playerSettings .playerControls .playFillContainer {
+      width: 5rem;
+      height: 5rem;
+    }
+}

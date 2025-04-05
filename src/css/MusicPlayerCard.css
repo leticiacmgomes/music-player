@@ -1,0 +1,47 @@
+.musicPlayerCard {
+  width: 80vw;
+  height: 70vh;
+  border-radius: 1.5rem;
+  background: #212936;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.musicPlayerCard img {
+  border-radius: 1rem;
+  max-width: 100%;
+  max-height: 50%;
+}
+
+@media screen and (min-width: 700px) {
+  .musicPlayerCard {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 790px) {
+  .musicPlayerCard {
+    width: 35vw;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .musicPlayerCard {
+    width: 25vw;
+  }
+}
+
+@media screen and (min-width: 2550px) {
+  .musicPlayerCard img {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  .musicPlayerCard {
+    height: 55vh;
+  }
+}
+

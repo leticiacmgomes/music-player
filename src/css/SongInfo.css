@@ -1,0 +1,45 @@
+.songInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.songInfo .nameSong {
+  font-size: 1rem;
+  font-weight: 650;
+  color: #E5E7EB;
+}
+
+.songInfo .singer {
+  font-size: 0.75rem;
+  color: #4D5562;
+}
+
+@media screen and (min-width: 2550px) {
+  .songInfo {
+    gap: 1.3rem;
+  }
+  
+  .songInfo .nameSong {
+    font-size: 1.8rem;
+  }
+  
+  .songInfo .singer {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  .songInfo {
+    gap: 2.1rem;
+  }
+  
+  .songInfo .nameSong {
+    font-size: 2.3rem;
+  }
+  
+  .songInfo .singer {
+    font-size: 2rem;
+  }
+}
