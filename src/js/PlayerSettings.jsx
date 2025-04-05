@@ -28,12 +28,12 @@ export const PlayerSettings = ({song, setCurrentSongIndex, covers}) => {
   }
   
   let pause = () => {
-    if(!isPaused) {
-      audioRef.current.pause()
-      setIsPaused(!isPaused)
-    } else {
+    if(audioRef.current.paused) {
       audioRef.current.play()
-      setIsPaused(!isPaused)
+      setIsPaused(false)
+    } else {
+      audioRef.current.pause()
+      setIsPaused(true)
     }
   }
   
@@ -60,11 +60,17 @@ export const PlayerSettings = ({song, setCurrentSongIndex, covers}) => {
   
   useEffect(() => {
     
-    audioRef.current = new Audio(song)
+    if (!audioRef.current) {
+      audioRef.current = new Audio()
+    }
     
     const audio = audioRef.current;
     
-    audio.play()
+    if (audio) {
+      audio.src = song;
+      audio.load()
+      audio.play()
+    }
     
     let updateProgress = () => {
       setProgressBar((audio.currentTime / audio.duration) * 100)
@@ -89,14 +95,14 @@ export const PlayerSettings = ({song, setCurrentSongIndex, covers}) => {
   
   return(
     <div className="playerSettings">
-      <section class="progressBarContainer">
+      <section className="progressBarContainer">
         
-        <div class="timerContainer">
+        <div className="timerContainer">
           <span>{formatTime(currentTime)}</span>
           <span>{formatTime(duration)}</span>
         </div>
         
-        <input type="range" value={progressBar} onChange={handleInput} className="progressBar" style={{background: `linear-gradient(to right, #C93B76 ${progressBar}%, white ${progressBar}%)`}}/>
+        <input type="range" value={progressBar} onChange={handleInput} min="0" max="100" step="0.1" className="progressBar" style={{background: `linear-gradient(to right, #C93B76 ${progressBar}%, white ${progressBar}%)`}}/>
       </section>
       
       <section className="playerControls">
