@@ -2,14 +2,13 @@ import {useRef, useState, useEffect} from 'react'
 
 import '../css/PlayerSettings.css'
 
-
 export const PlayerSettings = ({song, setCurrentSongIndex, covers}) => {
   
   const audioRef = useRef(null)
   const [progressBar, setProgressBar] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
+  const [isPaused, setIsPaused] = useState(true)
   
   let formatTime = (time) => {
     if(!time || isNaN(time)) return "00:00";
@@ -28,13 +27,13 @@ export const PlayerSettings = ({song, setCurrentSongIndex, covers}) => {
   }
   
   let pause = () => {
-    if(audioRef.current.paused) {
+    if (isPaused) {
       audioRef.current.play()
-      setIsPaused(false)
     } else {
       audioRef.current.pause()
-      setIsPaused(true)
     }
+    
+    setIsPaused(!isPaused)
   }
   
   let nextSong = () => {
